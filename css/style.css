@@ -139,18 +139,25 @@ body {
   color: #fff;
   font-weight: 500;
   position: relative;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
   padding-left: .1875rem;
   padding-right: .1875rem;
   line-height: 1.31
 }
+.book span {
+  position: relative;
+  z-index: 2
+}
 .book::after {
   content: "";
   position: absolute;
-  top: calc(100% + .34375rem);
+  top: 100%;
   left: 0;
   background-color: #f95454;
   height: .125rem;
-  width: 100%
+  width: 100%;
+  transition: all .3s
 }
 .header__container {
   display: grid;
@@ -188,6 +195,7 @@ body {
   color: #fff;
   font-weight: 500;
   letter-spacing: -.025rem;
+  transition: color .3s;
   line-height: 1.31
 }
 @media (min-width:90em) {
@@ -371,5 +379,14 @@ body {
     -webkit-column-gap: clamp(.9375rem ,-3.8479472337rem + 9.9699413708vw ,5.125rem);
     -moz-column-gap: clamp(.9375rem ,-3.8479472337rem + 9.9699413708vw ,5.125rem);
     column-gap: clamp(.9375rem ,-3.8479472337rem + 9.9699413708vw ,5.125rem)
+  }
+}
+@media (any-hover:hover) {
+  .book:hover::after {
+    top: 0;
+    height: 100%
+  }
+  .menu__link:hover {
+    color: #f95454
   }
 }
